@@ -13,4 +13,4 @@ jobs:
       
       - name: Copy to Windows server
         run: |
-         sshpass -p "${{ secrets.PASSWORD }}" scp Kanwal_index.html ${{ secrets.USERNAME }} @ ${{ secrets.IP }}: -o StrictHostKeyChecking=no -o UserKnownHostsFile='C:/inetpub/wwwroot/'
+         sshpass -p "${{ secrets.PASSWORD }}" scp -o StrictHostKeyChecking=no -r Kanwal_index.html ${{ secrets.USERNAME }} @ ${{ secrets.IP }}:'C:/inetpub/wwwroot/'
