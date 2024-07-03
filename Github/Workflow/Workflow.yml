@@ -1,0 +1,17 @@
+name: Simple Hmtl to Windows deployment
+on:
+  push:
+    branches:
+    - master
+jobs:
+  deploymentjob:
+    name: Deploy to Windows Server
+    runs-on: ubuntu-latest
+    steps:
+      - name:  step1 checkout
+        uses: actions/checkout@v4
+      
+      - name: Copy to Windows server
+        run: |
+          sshpass -p $
+         scp -r Kanwal_index.html Administrator@157.175.217.156:'C:\inetpub\wwwroot\'
